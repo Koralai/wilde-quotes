@@ -76,8 +76,15 @@ button {
 }
 
 @media (max-width: 425px) {
+    * {
+        height: auto;
+    }
+
     .quote {
-        width: 98%;
+        width: 100%;
+        margin: 3rem 0 3rem 0;
         padding: 1rem;
+        border-right: none;
+        border-left: none;
     }
 }
