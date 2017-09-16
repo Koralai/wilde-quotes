@@ -1,0 +1,83 @@
+
+/* Browser styles reset */
+
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    height: 100%;
+    font-size: 18px;
+    line-height: 1.75;
+    font-family: 'Crimson Text', Serif;
+    color: #333;
+    vertical-align: baseline;
+    background: transparent;
+    box-sizing: border-box;
+}
+
+/*Custom styling*/
+
+.aligner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.quote {
+    height: auto;
+    width: 60%;
+    padding: 3rem;
+    text-align: center;
+    background: white;
+    border: 1rem lightskyblue;
+    border-style: double;
+}
+
+h1 {
+    font-size: 2rem;
+}
+
+h2 {
+    font-size: 1.25rem;
+}
+
+h3 {
+    text-align: right;
+    font-style: italic;
+    font-size: 1.1rem;
+}
+
+.divider {
+    width: 50%;
+    height: .25rem;
+    margin: .5rem auto;
+}
+
+button {
+    border: 1px solid silver;
+}
+
+/*Responsive display*/
+
+@media (min-width: 1650px) {
+    .quote {
+        width: 45%;
+    }
+}
+
+@media(max-width: 768px) {
+    .quote {
+        width: 80%;
+        padding: 2rem;
+    }
+}
+
+@media (max-width: 425px) {
+    .quote {
+        width: 98%;
+        padding: 1rem;
+    }
+}
