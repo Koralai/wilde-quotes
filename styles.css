@@ -8,7 +8,7 @@
     outline: 0;
     height: 100%;
     font-size: 18px;
-    line-height: 1.75;
+    line-height: 1.65;
     font-family: 'Crimson Text', Serif;
     color: #333;
     vertical-align: baseline;
@@ -57,7 +57,20 @@ h3 {
 }
 
 button {
-    border: 1px solid silver;
+    padding: .5rem .75rem;
+    margin: 0 .5rem;
+    border-radius: .5rem;
+    background: lightskyblue;
+    letter-spacing: 1px;
+}
+
+button:hover {
+    background: deepskyblue;
+    transition: background-color .2s linear;
+}
+
+a:hover {
+    color: deepskyblue;
 }
 
 /*Responsive display*/
@@ -75,16 +88,17 @@ button {
     }
 }
 
-@media (max-width: 425px) {
+@media (max-width: 467px) {
     * {
         height: auto;
     }
 
     .quote {
         width: 100%;
-        margin: 3rem 0 3rem 0;
+        margin: 1rem 0;
         padding: 1rem;
         border-right: none;
         border-left: none;
+        border-bottom: none;
     }
 }
