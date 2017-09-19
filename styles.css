@@ -34,6 +34,7 @@
     background: white;
     border: 1rem lightskyblue;
     border-style: double;
+    transition: border-color .5s linear;
 }
 
 h1 {
@@ -66,7 +67,7 @@ button {
 
 button:hover {
     background: deepskyblue;
-    transition: background-color .2s linear;
+    transition: background-color .4s linear;
 }
 
 a:hover {
