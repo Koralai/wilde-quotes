@@ -22,7 +22,7 @@ function getRandomInt(min, max) {
 function getRandomColor() {
     var letters = '789ABCD';
     var color = '#';
-    for (var i = 0; i < 6; i++) {
+    for (var i = 0; i < 6; i++) {                       //6 because of the hexidecimal format
       color += letters[Math.floor(Math.random() * 6)];
     }
     return color;
@@ -31,9 +31,10 @@ function getRandomColor() {
 $("#quote-text").html(quotes[getRandomInt(0,quotes.length)]);
 
 $("#btn-get").click(function(){
+    var randomColor = getRandomColor();
     $("#quote-text").html(quotes[getRandomInt(0,quotes.length)]); //Gets the "text" value of the object at a random index of the array
-    $(".quote").css("border-color", getRandomColor());
-    $("button").css("background", getRandomColor());
+    $(".quote").css("border-color", randomColor);
+    $("button").css("background", randomColor);
 });
 
 });
