@@ -13,28 +13,39 @@ var quotes = [
     "Some cause happiness wherever they go; others whenever they go.",
 ];
 
+var colorList = [
+  ['red', 'black'],
+  ['blue', 'silver'],
+  ['green', 'yellow'],
+];
+
 function getRandomInt(min, max) {
     min = Math.ceil(min);
     max = Math.floor(max);
-    return Math.floor(Math.random() * (max - min)) + min; //The maximum is exclusive and the minimum is inclusive 
-  }
+    return Math.floor(Math.random() * (max - min)) + min; //  The maximum is exclusive and the minimum is inclusive 
+  };
 
-function getRandomColor() {
-    var letters = '789ABCD';
-    var color = '#';
-    for (var i = 0; i < 6; i++) {                       //6 because of the hexidecimal format
-      color += letters[Math.floor(Math.random() * 6)];
-    }
-    return color;
-  }
+function getRandomColorIndex () {
+  return Math.floor(Math.random() * colorList.length); //  0 is included and colorList.length is excluded because of Math.floor
+};
 
-$("#quote-text").html(quotes[getRandomInt(0,quotes.length)]);
+$("#quote-text").html(quotes[getRandomInt(0,quotes.length)]);   //  Gets the value of a random index of the quotes array
 
 $("#btn-get").click(function(){
-    var randomColor = getRandomColor();
-    $("#quote-text").html(quotes[getRandomInt(0,quotes.length)]); //Gets the "text" value of the object at a random index of the array
+    var randomColorIndex = getRandomColorIndex();
+    var randomColor = colorList[randomColorIndex][0];
+    var hoverColor = colorList[randomColorIndex][1];
+    $("#quote-text").html(quotes[getRandomInt(0,quotes.length)]); 
     $(".quote").css("border-color", randomColor);
-    $("button").css("background", randomColor);
+    $("button").css("background-color", randomColor);
+
+    var onHoverBegin = function () {
+      $(this).css("background-color", hoverColor);
+    };
+    var onHoverEnd = function () {
+      $(this).css("background-color", randomColor);
+    };
+    $("button").hover(onHoverBegin, onHoverEnd);
 });
 
 });
