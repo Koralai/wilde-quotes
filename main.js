@@ -14,9 +14,42 @@ var quotes = [
 ];
 
 var colorList = [
-  ['red', 'black'],
-  ['blue', 'silver'],
-  ['green', 'yellow'],
+  {
+    "baseColor": "#d86c70", // light red
+    "darkened": "#C45257"
+  },
+  {
+    "baseColor": "#7CD9D5", // robin's egg blue
+    "darkened": "#65C9C5"
+  },
+  {
+    "baseColor": "#A3DE5D", // yellow-green
+    "darkened": "#8CC944"
+  },
+  {
+    "baseColor": "#B890E8", // violet
+    "darkened": "#9B6DD1"
+  },
+  {
+    "baseColor": "#A1ADE3", // slate blue
+    "darkened": "#8290D1"
+  },
+  {
+    "baseColor": "#95CAE4", // powder blue
+    "darkened": "#75B3D1"
+  },
+  {
+    "baseColor": "#E1CEB1", // light, sandy brown
+    "darkened": "#D4B78C"
+  },
+  {
+    "baseColor": "#FFCC33", // gold
+    "darkened": "#EBB30C"
+  },
+  {
+    "baseColor": "#38BA79", // kelly green
+    "darkened": "#29A366"
+  },
 ];
 
 function getRandomInt(min, max) {
@@ -33,8 +66,8 @@ $("#quote-text").html(quotes[getRandomInt(0,quotes.length)]);   //  Gets the val
 
 $("#btn-get").click(function(){
     var randomColorIndex = getRandomColorIndex();
-    var randomColor = colorList[randomColorIndex][0];
-    var hoverColor = colorList[randomColorIndex][1];
+    var randomColor = colorList[randomColorIndex].baseColor;
+    var hoverColor = colorList[randomColorIndex].darkened;
     $("#quote-text").html(quotes[getRandomInt(0,quotes.length)]); 
     $(".quote").css("border-color", randomColor);
     $("button").css("background-color", randomColor);
