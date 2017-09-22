@@ -11,6 +11,27 @@ var quotes = [
     "Quotation is a serviceable substitute for wit.",
     "Fashion is a form of ugliness so intolerable that we have to alter it every six months.",
     "Some cause happiness wherever they go; others whenever they go.",
+    "Morality is simply the attitude we adopt towards people we personally dislike.",
+    "The world is a stage and the play is badly cast.",
+    "I like men who have a future and women who have a past.",
+    "To get back my youth I would do anything in the world, except take exercise, get up early, or be respectable.",
+    "A bore is someone who deprives you of solitude without providing you with company.",
+    "America is the only country that went from barbarism to decadence without civilization in between.",
+    "The public have an insatiable curiosity to know everything, except what is worth knowing.",
+    "Indeed I have always been of the opinion that hard work is simply the refuge of people who have nothing to do.",
+    "The nicest feeling in the world is to do a good deed anonymously - and have somebody find out.",
+    "I always pass on good advice. It is the only thing to do with it. It is never of any use to oneself.",
+    "They've promised that dreams can come true - but forgot to mention that nightmares are dreams, too.",
+    "The basis of optimism is sheer terror.",
+    "This wallpaper is dreadful, one of us will have to go.",
+    "The mystery of love is greater than the mystery of death.",
+    "The world was my oyster, but I used the wrong fork.",
+    "No man is rich enough to buy back his past.",
+    "Punctuality is the thief of time.",
+    "When the Gods wish to punish us, they answer our prayers.",
+    "I love to talk about nothing. It's the only thing I know anything about.",
+    "People who count their chickens before they are hatched act very wisely because chickens run about so absurdly that it's impossible to count them accurately.",
+    "To be natural is such a very difficult pose to keep up.",
 ];
 
 var colorList = [
@@ -70,7 +91,7 @@ $("#btn-get").click(function(){
     var hoverColor = colorList[randomColorIndex].darkened;
     $("#quote-text").html(quotes[getRandomInt(0,quotes.length)]); 
     $(".quote").css("border-color", randomColor);
-    $("button").css("background-color", randomColor);
+    $(".button").css("background-color", randomColor);
 
     var onHoverBegin = function () {
       $(this).css("background-color", hoverColor);
@@ -78,7 +99,7 @@ $("#btn-get").click(function(){
     var onHoverEnd = function () {
       $(this).css("background-color", randomColor);
     };
-    $("button").hover(onHoverBegin, onHoverEnd);
+    $(".button").hover(onHoverBegin, onHoverEnd);
 });
 
 });
