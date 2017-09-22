@@ -39,16 +39,6 @@ $(function () {
     },
   ];
 
-  function getRandomInt(min, max) {
-    min = Math.ceil(min);
-    max = Math.floor(max);
-    return Math.floor(Math.random() * (max - min)) + min; //  The maximum is exclusive and the minimum is inclusive 
-  };
-
-  function getRandomColorIndex() {
-    return Math.floor(Math.random() * colorList.length); //  0 is included and colorList.length is excluded because of Math.floor
-  };
-
   $.getJSON("main.json")
     .done(function (data) { 
       var quotes = data;
@@ -73,7 +63,17 @@ $(function () {
     })
     .fail(function (jqxhr, textStatus, error) {
       var err = textStatus + ", " + error;
-      console.log("Request Failed: " + err);
+      console.error("Request Failed: " + err);
     });
+
+    function getRandomInt(min, max) {
+      min = Math.ceil(min);
+      max = Math.floor(max);
+      return Math.floor(Math.random() * (max - min)) + min; //  The maximum is exclusive and the minimum is inclusive 
+    };
+  
+    function getRandomColorIndex() {
+      return Math.floor(Math.random() * colorList.length); //  0 is included and colorList.length is excluded because of Math.floor
+    };  
 
 });
