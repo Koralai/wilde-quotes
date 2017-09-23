@@ -48,6 +48,7 @@ h3 {
     text-align: right;
     font-style: italic;
     font-size: 1.1rem;
+    margin-right: 1.5rem;
 }
 
 .divider {
@@ -58,7 +59,7 @@ h3 {
 
 .button {
     padding: .5rem .75rem;
-    margin: 0 .5rem;
+    margin: 0 .3rem;
     border-radius: .5rem;
     background: lightskyblue;
     letter-spacing: 1px;
@@ -78,20 +79,20 @@ a.no-underline {
 
 /*Responsive display*/
 
-@media (min-width: 1650px) {
+@media (min-width: 1650px) {    /*Large screen view*/
     .quote {
         width: 45%;
     }
 }
 
-@media(max-width: 768px) {
+@media(max-width: 768px) {      /*Tablet view*/
     .quote {
         width: 80%;
         padding: 2rem;
     }
 }
 
-@media (max-width: 467px) {
+@media (max-width: 736px) {     /*Mobile view, portrait and landscape */
     * {
         height: auto;
     }
