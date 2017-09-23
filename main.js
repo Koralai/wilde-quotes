@@ -42,13 +42,22 @@ $(function () {
   $.getJSON("main.json")
     .done(function (data) { 
       var quotes = data;
-      $("#quote-text").html(quotes[getRandomInt(0, quotes.length)].text); //  Gets a random index of the array of objects in main.json and returns its "text" value
+      var firstRandomQuote = quotes[getRandomInt(0, quotes.length)].text; //  Gets a random index of the array of objects in main.json and returns its "text" value
+      $("#quote-text").html(firstRandomQuote); 
+      
+      var linkText = "https://twitter.com/intent/tweet?text=" + firstRandomQuote + " -Oscar Wilde";
+      $("#tweet-link").removeAttr("href").attr("href", linkText);
 
       $("#btn-get").click(function () {
+        var nextRandomQuote = quotes[getRandomInt(0, quotes.length)].text; // I wasn't able to use the original variable inside this scope.
+        $("#quote-text").html(nextRandomQuote);
+        
+        var nextLinkText = "https://twitter.com/intent/tweet?text=" + nextRandomQuote + " -Oscar Wilde";
+        $("#tweet-link").removeAttr("href").attr("href", nextLinkText);
+
         var randomColorIndex = getRandomColorIndex();
         var randomColor = colorList[randomColorIndex].baseColor;
         var hoverColor = colorList[randomColorIndex].darkened;
-        $("#quote-text").html(quotes[getRandomInt(0, quotes.length)].text);
         $(".quote").css("border-color", randomColor);
         $(".button").css("background-color", randomColor);
 
